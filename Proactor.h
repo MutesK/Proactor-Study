@@ -37,10 +37,10 @@ public:
 
     void execute()
     {
-        while(!isfinish || completionEventQueue->arePendingOperations())
+        while(!isfinish || completionEventQueue->size() > 0)
         {
             while(completionEventQueue->size() == 0 && !isfinish)
-                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                continue;
 
             if(completionEventQueue->size() > 0)
             {

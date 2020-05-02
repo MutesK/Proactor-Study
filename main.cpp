@@ -42,7 +42,7 @@ public:
         for (T element: elements)
             AsynchronousOperation<T>::result += element;
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(std::rand() % 10000));
+        // std::this_thread::sleep_for(std::chrono::milliseconds(std::rand() % 10000));
 
         AsynchronousOperation<T>::executed = true;
     }
